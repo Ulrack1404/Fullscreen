@@ -1,0 +1,168 @@
+//<МИКСИНЫ>======================================================================
+// @import "mixins"; 
+//</МИКСИНЫ>=====================================================================
+
+//<ШРИФТЫ>=========================================================================
+//<Подключаем шрифты>=============================================================
+// @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Roboto:wght@400;700&display=swap');
+//</Подключаем шрифты>=============================================================
+
+//<Иконочные шрифты>=============================================================
+// @import "icons";
+//</Иконочные шрифты>=============================================================
+
+//<Шрифт по умолчанию>=============================================================
+$fontFamily: Arial,
+Helvetica,
+sans-serif;
+//</Шрифт по умолчанию>=============================================================
+// </ШРИФТЫ>=========================================================================
+
+// <ПЕРЕМЕННЫЕ>======================================================================
+$minWidth: 320px;
+$maxWidth: 1152;
+$maxWidthContainer: 856;
+$md1: $maxWidthContainer+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+// </ПЕРЕМЕННЫЕ>=================================================================
+
+// <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>=======================================================
+@import "reset.scss";
+
+body {
+   color: #fff;
+   font-size: 20px;
+   font-family: $fontFamily;
+   background-color: #333;
+
+   &._lock {
+      overflow: hidden;
+   }
+}
+
+// </ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===================================================
+
+// <ОБОЛОЧКА>======================================================================
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+
+   &._loaded {}
+}
+
+// </ОБОЛОЧКА>======================================================================
+._container {
+   max-width: $maxWidthContainer + px;
+   margin: o auto;
+
+   @media (max-width: $md1 + px) {
+      max-width: 970px;
+   }
+
+   @media (max-width: $md2+px) {
+      max-width: 750px;
+   }
+
+   @media (max-width: $md3+px) {
+      max-width: none;
+      padding: 0 10px;
+   }
+}
+
+// <HEADER>======================================================================
+.header {
+   // &__content {} 
+}
+
+// ОБЯЗАТЕЛЬНО УКАЗАТЬ===============================================
+body {
+   height: 100%;
+}
+
+.wrapper {
+   min-height: 100vh;
+}
+
+// =================================================
+
+$max-width_container: 800px;
+
+.fullscreen {
+   min-height: 100vh;
+   background-color: rgb(122, 74, 155);
+   display: flex;
+   padding: 20px 0;
+
+   &__body {      
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: $max-width_container;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20px;
+   }
+
+   &__title {
+      font-size: 50px;
+      margin: 0px 0px 20px 0px;
+   }
+
+   &__text {
+      font-size: 25px;
+      margin: 0px 0px 20px 0px;
+   }
+
+   &__link {
+      display: inline-block;
+      line-height: 50px;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 2px;
+      background-color: #77608d;
+      align-self: center;
+      padding: 0 20px;
+   }
+
+   &__two {
+      background-color: #794f45;
+   }
+
+   &__bg_1{
+      background: url('../img/02.jpg') center / cover no-repeat fixed;
+   }
+   &__bg_2{
+      background: url('../img/03.jpg') center / cover no-repeat fixed;
+   }
+}
+
+.content {
+   &__body {
+      max-width: $max-width_container;
+      margin: 0 auto;
+      padding: 30px 20px;
+
+      & p:not(:last-child) {
+         margin: 0px 0px 20px 0px;
+      }
+   }
+}
+
+
+.footer {
+   background-color: #111;
+   text-align: center;
+
+   &__body {
+      max-width: $max-width_container;
+      margin: 0 auto;
+      padding: 30px 20px;
+   }
+}
